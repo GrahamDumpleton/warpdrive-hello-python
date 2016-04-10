@@ -4,11 +4,11 @@ import os
 import sys
 
 from wsgiref.simple_server import make_server
-from wsgi import application
+from wsgi import application as hello_world
 
 port = int(os.environ.get('WARPDRIVE_HTTP_PORT', '8080'))
 
-httpd = make_server('', port, application)
+httpd = make_server('', port, hello_world)
 
 print('Serving on port %d ...' % port, file=sys.stderr)
 
